@@ -1,8 +1,12 @@
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+// Components
+import { Navbar } from '@/components'
+
+// Fonts
+import localFont from 'next/font/local'
+const satoshi = localFont({ src: '../../public/fonts/Satoshi-Variable.ttf' })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -16,7 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <nav className="mx-32 my-10">
+        <Navbar />
+      </nav>
+      <body className={`${satoshi.className} text-dark bg-light`}>
+        {children}
+      </body>
     </html>
   )
 }
