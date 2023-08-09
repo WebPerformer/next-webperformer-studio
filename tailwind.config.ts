@@ -22,6 +22,12 @@ const config: Config = {
       xs: { raw: '(max-width: 320px)' },
       'h-md': { raw: '(max-height: 700px)' },
     },
+    fontSize: {
+      xl: '4.688rem',
+      lg: '1.625rem',
+      md: '0.75rem',
+      sm: '0.5rem',
+    },
   },
   plugins: [],
 }

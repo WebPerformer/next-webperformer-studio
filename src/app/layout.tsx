@@ -20,11 +20,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <nav className="mx-32 my-10">
-        <Navbar />
-      </nav>
-      <body className={`${satoshi.className} text-dark bg-light`}>
-        {children}
+      <body className={`${satoshi.className} text-md text-dark bg-light`}>
+        <header className="mx-32 my-10">
+          <Navbar />
+        </header>
+        <main>{children}</main>
       </body>
     </html>
   )
