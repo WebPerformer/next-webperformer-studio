@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 
 // Fonts
 import localFont from 'next/font/local'
@@ -7,33 +6,20 @@ const panchang = localFont({ src: '../../public/fonts/Panchang-Variable.ttf' })
 
 export default function Navbar() {
   return (
-    <div className="relative flex items-center justify-between">
-      <Link href="/">
-        <div className={`${panchang.className} text-lg font-bold`}>WP.</div>
-      </Link>
-      <ul className="absolute inline-flex gap-10 font-bold uppercase left-1/2 -translate-x-1/2">
-        <Link href="/">
-          <li className="underline underline-offset-4">Home</li>
-        </Link>
-        <Link href="/projects">
-          <li className="text-dark opacity-50">Projects</li>
-        </Link>
-        <Link href="/workstation">
-          <li className="text-dark opacity-50">Workstation</li>
-        </Link>
-        <Link href="/support">
-          <li className="text-dark opacity-50">Support</li>
-        </Link>
+    <div className="fixed left-1/2 -translate-x-1/2 bg-dark-500 flex items-center justify-between gap-10 p-2 rounded-2xl">
+      <div className={`${panchang.className} w-20 text-center font-bold`}>
+        WP.
+      </div>
+      <ul className="inline-flex gap-5 text-gray font-bold">
+        <li>Projects</li>
+        <li>Workstation</li>
+        <li>Support</li>
       </ul>
-      <div className="flex items-center gap-10">
-        <button className="px-5 py-2 font-bold text-light bg-dark uppercase">
-          Request Services
+      <div className="relative">
+        <button className="px-6 py-2 text-dark-500 font-bold bg-white overflow-hidden rounded-xl z-10">
+          Request Service
         </button>
-        <div className="flex items-center gap-5">
-          <button className="font-bold text-dark opacity-50">BR</button>
-          <div className="text-lg">|</div>
-          <button className="font-bold">EN</button>
-        </div>
+        <div className="glow absolute top-0 left-0 w-full h-full -z-[1]" />
       </div>
     </div>
   )

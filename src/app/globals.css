@@ -1,3 +1,70 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+// Noise animation
+.noise:before{
+  content: "";
+  position: absolute;
+  animation: noise 1.2s steps(3) both infinite;
+  will-change: auto;
+  background-image: url('/images/noise.png');
+  background-size: 100px;
+  width: 200%;
+  height: 200%;
+  left: -50%;
+  top: -50%;
+  opacity: .3;
+}
+
+@keyframes noise {
+    0% {
+        transform: translate3d(1%,-1%,0)
+    }
+
+    10% {
+        transform: translate3d(-5%,-2%,0)
+    }
+
+    20% {
+        transform: translate3d(10%,5%,0)
+    }
+
+    30% {
+        transform: translate3d(5%,-11%,0)
+    }
+
+    40% {
+        transform: translate3d(-12%,-5%,0)
+    }
+
+    50% {
+        transform: translate3d(10%,9%,0)
+    }
+
+    60% {
+        transform: translate3d(15%,0,0)
+    }
+
+    70% {
+        transform: translate3d(-10%,8%,0)
+    }
+
+    80% {
+        transform: translate3d(10%,2%,0)
+    }
+
+    90% {
+        transform: translate3d(1%,5%,0)
+    }
+
+    to {
+        transform: translate3d(0,8%,0)
+    }
+}
+
+/* Button Glow Effect */
+.glow{
+    background: linear-gradient(90deg, rgba(117, 215, 245, 0.7) 0%, rgba(213, 159, 255, 0.7) 100%);
+    filter: blur(10px);
+}

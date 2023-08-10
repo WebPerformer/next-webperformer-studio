@@ -8,9 +8,10 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      light: '#FAEDCD',
-      dark: '#111416',
-      gray: '#A1A1A1',
+      white: '#FFFFFF',
+      gray: '#5A5A5A',
+      'dark-500': '#1D1D1D',
+      'dark-700': '#080808',
       transparent: 'rgba(0, 0, 0, 0)',
     },
     screens: {
@@ -23,10 +24,7 @@ const config: Config = {
       'h-md': { raw: '(max-height: 700px)' },
     },
     fontSize: {
-      xl: '4.688rem',
-      lg: '1.625rem',
-      md: '0.75rem',
-      sm: '0.5rem',
+      md: '1rem',
     },
   },
   plugins: [],
