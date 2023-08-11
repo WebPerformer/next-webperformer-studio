@@ -20,12 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <div className="noise fixed pointer-events-none w-full h-full"></div>
       <body className={`${satoshi.className} text-white bg-dark-700`}>
-        <header className="mx-32 my-10">
+        <div className="noise fixed pointer-events-none z-50 overflow-hidden w-full h-full m-0" />
+        <header className="max-w-7xl m-auto p-8">
           <Navbar />
         </header>
-        <main className="mx-32">{children}</main>
+        <main className="px-32">{children}</main>
       </body>
     </html>
   )
