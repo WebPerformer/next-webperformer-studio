@@ -1,5 +1,6 @@
 import './globals.css'
 import type { Metadata } from 'next'
+import clsx from 'clsx'
 
 // Components
 import { Navbar } from '@/components'
@@ -20,12 +21,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${satoshi.className} text-white bg-dark-700`}>
+      <body className={clsx(satoshi.className, 'text-white bg-dark-700')}>
         <div className="noise fixed pointer-events-none z-50 overflow-hidden w-full h-full m-0" />
-        <header className="max-w-7xl m-auto p-8">
+        <header className="fixed left-1/2 -translate-x-1/2 max-w-7xl m-auto p-8">
           <Navbar />
         </header>
-        <main className="px-32">{children}</main>
+        <main className="max-w-[1600px] m-auto px-8">{children}</main>
       </body>
     </html>
   )

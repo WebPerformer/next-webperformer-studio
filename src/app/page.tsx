@@ -1,3 +1,33 @@
+// Section
+import { Hero, HeroImage } from '@/components'
+
 export default function Home() {
-  return <div></div>
+  return (
+    <div>
+      <Hero />
+      <HeroImage />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+    </div>
+  )
 }

@@ -2,8 +2,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import clsx from 'clsx'
-
-// Framer Motion
 import { motion } from 'framer-motion'
 
 interface LinkProps {
@@ -28,13 +26,13 @@ const TextLink: React.FC<LinkProps> = ({
   }
 
   return (
-    <Link href={link}>
+    <Link
+      href={link}
+      onMouseEnter={() => setHandleHover(true)}
+      onMouseLeave={() => setHandleHover(false)}
+    >
       <div className={clsx(button)}>
-        <div
-          onMouseEnter={() => setHandleHover(true)}
-          onMouseLeave={() => setHandleHover(false)}
-          className="relative flex overflow-hidden"
-        >
+        <div className="relative flex overflow-hidden">
           <motion.div
             animate={{ translateY: handleHover ? '-100%' : '0' }}
             transition={{
