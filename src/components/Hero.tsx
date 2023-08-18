@@ -15,7 +15,7 @@ const panchang = localFont({ src: '../../public/fonts/Panchang-Variable.ttf' })
 
 export default function Hero() {
   return (
-    <div className="absolute top-0 left-0 w-full h-screen flex items-center justify-center">
+    <div className="absolute top-0 left-0 w-full h-screen flex items-center justify-center -z-10">
       <div className="flex flex-col items-center text-center">
         <div className="absolute top-0 left-0 w-full h-screen overflow-hidden -z-10">
           <Image src={lines} alt="" className="opacity-30 scale-105" />
