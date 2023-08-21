@@ -24,8 +24,8 @@ const config: Config = {
       'h-md': { raw: '(max-height: 700px)' },
     },
     fontSize: {
-      lg: '3.75rem',
-      md: '1rem',
+      lg: 'max(1.75rem, 9.75vw)',
+      md: '1.25rem',
       sm: '0.625rem',
     },
   },
