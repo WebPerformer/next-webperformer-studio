@@ -20,15 +20,17 @@ const saol = localFont({
 
 export default function Hero() {
   return (
-    <div>
+    <div className="pt-40 pb-20">
       <div className="absolute top-0 left-0 h-screen overflow-hidden -z-10">
         <Image src={lines} alt="" className="opacity-20 scale-105" />
       </div>
-      <div className="flex flex-col items-center justify-center pt-40">
+      <div className="flex flex-col items-center justify-center">
         <div>
           <Image src={brand} alt="" />
         </div>
-        <h1 className={clsx(walsheim.className, 'text-lg leading-none my-10')}>
+        <h1
+          className={clsx(walsheim.className, 'text-title leading-none my-10')}
+        >
           DIGITAL{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-b from-dark-500 to-gray">
             SOLUTIONS
@@ -44,12 +46,12 @@ export default function Hero() {
           </span>{' '}
           COMPANY
         </h1>
-        <p className="w-2/3 text-center text-md text-gray">
+        <p className="w-2/3 text-center text-base text-gray">
           Empower Your Business with Cutting-Edge Digital Services. Experience
           the most modern and innovative approach to elevate your business in
           the digital age.
         </p>
-        <div className="mt-20 px-6 py-3 ring-1 ring-gray rounded-2xl text-md font-semibold">
+        <div className="mt-20 px-6 py-3 ring-1 ring-gray rounded-2xl text-base font-semibold">
           <TextLoop />
         </div>
       </div>
