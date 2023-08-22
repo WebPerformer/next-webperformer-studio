@@ -12,6 +12,8 @@ const config: Config = {
       gray: '#5A5A5A',
       'dark-500': '#1D1D1D',
       'dark-700': '#080808',
+      pink: '#D59FFF',
+      blue: '#75D7F5',
       transparent: 'rgba(0, 0, 0, 0)',
     },
     screens: {
@@ -24,8 +26,8 @@ const config: Config = {
       'h-md': { raw: '(max-height: 700px)' },
     },
     fontSize: {
-      lg: 'max(1.75rem, 9.75vw)',
-      md: '1.25rem',
+      lg: 'max(2.75rem, 5.75vw)',
+      md: 'max(1rem, 0.8vw)',
       sm: '0.625rem',
     },
   },

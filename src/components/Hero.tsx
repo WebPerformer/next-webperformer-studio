@@ -20,37 +20,36 @@ const saol = localFont({
 
 export default function Hero() {
   return (
-    <div className="absolute top-0 left-0 w-full h-screen flex items-center justify-center -z-10 pt-12">
-      <div className="flex flex-col items-center text-center">
-        <div className="absolute top-0 left-0 overflow-hidden -z-10">
-          <Image
-            src={lines}
-            alt=""
-            className="w-full h-screen opacity-30 scale-105"
-          />
+    <div>
+      <div className="absolute top-0 left-0 h-screen overflow-hidden -z-10">
+        <Image src={lines} alt="" className="opacity-20 scale-105" />
+      </div>
+      <div className="flex flex-col items-center justify-center pt-40">
+        <div>
+          <Image src={brand} alt="" />
         </div>
-        <Image src={brand} alt="" className="mb-10" />
-        <h1
-          className={clsx(
-            walsheim.className,
-            'text-lg font-semibold uppercase leading-none',
-          )}
-        >
-          Digital Solution <br />{' '}
-          <span>
-            For{' '}
-            <span className={clsx(saol.className, 'font-light lowercase')}>
-              Your
-            </span>{' '}
-            Company
-          </span>
+        <h1 className={clsx(walsheim.className, 'text-lg leading-none my-10')}>
+          DIGITAL{' '}
+          <span className="text-transparent bg-clip-text bg-gradient-to-b from-dark-500 to-gray">
+            SOLUTIONS
+          </span>{' '}
+          <br /> FOR{' '}
+          <span
+            className={clsx(
+              saol.className,
+              'font-light text-transparent bg-clip-text bg-gradient-to-r from-pink to-blue',
+            )}
+          >
+            your
+          </span>{' '}
+          COMPANY
         </h1>
-        <p className="w-3/4 text-md text-gray my-16">
+        <p className="w-2/3 text-center text-md text-gray">
           Empower Your Business with Cutting-Edge Digital Services. Experience
           the most modern and innovative approach to elevate your business in
           the digital age.
         </p>
-        <div className="text-md px-6 py-2 ring-1 ring-gray bg-dark-700 rounded-xl">
+        <div className="mt-20 px-6 py-3 ring-1 ring-gray rounded-2xl text-md font-semibold">
           <TextLoop />
         </div>
       </div>
