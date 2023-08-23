@@ -4,6 +4,9 @@ import React, { useRef } from 'react'
 import clsx from 'clsx'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
+// Components
+import { Card } from '.'
+
 // Images
 import star from '../../public/images/star.svg'
 import lines from '../../public/images/lines-2.svg'
@@ -33,7 +36,7 @@ export default function Branding() {
         }}
         className="relative text-dark-500 bg-white rounded-2xl p-10 overflow-hidden z-10"
       >
-        <div>
+        <div className="mb-20">
           <Image src={star} alt="" className="w-6" />
           <h1
             className={clsx(walsheim.className, 'text-xxl font-semibold my-10')}
@@ -45,7 +48,8 @@ export default function Branding() {
             Our passion for pushing the boundaries knows no limits.
           </p>
         </div>
-        <div className="absolute -top-1/2 -right-[80px] h-screen overflow-hidden -z-10">
+        <Card />
+        <div className="absolute -top-[280px] -right-[80px]">
           <Image src={lines} alt="" className="scale-105" />
         </div>
       </motion.div>
