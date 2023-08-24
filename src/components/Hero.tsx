@@ -21,9 +21,6 @@ const saol = localFont({
 export default function Hero() {
   return (
     <div className="relative pt-40 pb-20">
-      <div className="absolute top-0 left-0 h-full overflow-hidden -z-10">
-        <Image src={lines} alt="" className="opacity-20" />
-      </div>
       <div className="flex flex-col items-center justify-center">
         <div>
           <Image src={brand} alt="" />
@@ -55,6 +52,10 @@ export default function Hero() {
           <TextLoop />
         </div>
       </div>
+      <div className="absolute top-0 left-0 h-full overflow-hidden -z-10">
+        <Image src={lines} alt="" className="opacity-20" />
+      </div>
+      <div className="absolute top-32 left-0 w-[500px] h-[500px] bg-blue rounded-full blur-3xl opacity-10 -z-20" />
     </div>
   )
 }

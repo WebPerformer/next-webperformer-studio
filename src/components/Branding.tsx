@@ -36,7 +36,7 @@ export default function Branding() {
         }}
         className="relative text-dark-500 bg-white rounded-2xl p-10 overflow-hidden z-10"
       >
-        <div className="mb-20">
+        <div className="mb-32">
           <Image src={star} alt="" className="w-6" />
           <h1
             className={clsx(walsheim.className, 'text-xxl font-semibold my-10')}
