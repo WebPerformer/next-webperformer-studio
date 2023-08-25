@@ -47,8 +47,7 @@ export default function Hero() {
         <div className="mt-20 px-6 py-3 ring-1 ring-gray rounded-2xl text-base font-semibold">
           <TextLoop />
         </div>
-        <div className="absolute -top-1/2 right-2/3 w-[800px] h-[800px] bg-[#9131F1] rounded-full blur-3xl opacity-[0.03] -z-20" />
-        <div className="absolute -bottom-1/2 left-2/3 w-[800px] h-[800px] bg-[#3150F1] rounded-full blur-3xl opacity-[0.03] -z-20" />
+        <div className="absolute -top-2/3 -right-1/3 w-full h-[600px] bg-gradient-to-br from-[#9131F1] to-[#3150F1] rounded-[50%] blur-[100px] opacity-10 -z-20 -rotate-12" />
       </div>
       <div className="absolute top-0 left-0 h-full overflow-hidden -z-10">
         <Image src={lines} alt="" className="opacity-20" />

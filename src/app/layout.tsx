@@ -24,7 +24,7 @@ export default function RootLayout({
       <body
         className={clsx(
           satoshi.className,
-          'text-white bg-dark-700 overflow-x-hidden',
+          'text-white bg-dark-700 overflow-x-clip',
         )}
       >
         <div className="noise fixed pointer-events-none z-50 overflow-hidden w-full h-full m-0" />

@@ -28,15 +28,15 @@ export default function Branding() {
   const widthProgress = useTransform(scrollYProgress, [0, 1], ['90%', '100%'])
 
   return (
-    <div className="w-full flex justify-center overflow-hidden">
+    <div className="w-full flex justify-center overflow-clip">
       <motion.div
         ref={ref}
         style={{
           width: widthProgress,
         }}
-        className="relative text-dark-500 bg-white rounded-2xl p-10 overflow-hidden z-10"
+        className="relative text-dark-500 bg-white rounded-2xl p-10 overflow-clip z-10"
       >
-        <div className="mb-32">
+        <div className="mb-80">
           <Image src={star} alt="" className="w-6" />
           <h1
             className={clsx(walsheim.className, 'text-xxl font-semibold my-10')}
@@ -48,7 +48,9 @@ export default function Branding() {
             Our passion for pushing the boundaries knows no limits.
           </p>
         </div>
-        <Card />
+        <div className="relative w-full h-[200vh]">
+          <Card />
+        </div>
         <div className="absolute -top-[280px] -right-[80px]">
           <Image src={lines} alt="" className="scale-105" />
         </div>
