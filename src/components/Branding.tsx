@@ -25,7 +25,7 @@ export default function Branding() {
     offset: ['0 1', '0 0.2'],
   })
 
-  const widthProgress = useTransform(scrollYProgress, [0, 1], ['70%', '100%'])
+  const widthProgress = useTransform(scrollYProgress, [0, 1], ['90%', '100%'])
 
   return (
     <div className="w-full flex justify-center overflow-hidden">

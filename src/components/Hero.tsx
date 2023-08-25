@@ -21,18 +21,14 @@ const saol = localFont({
 export default function Hero() {
   return (
     <div className="relative pt-40 pb-20">
-      <div className="flex flex-col items-center justify-center">
+      <div className="relative flex flex-col items-center justify-center">
         <div>
           <Image src={brand} alt="" />
         </div>
         <h1
           className={clsx(walsheim.className, 'text-title leading-none my-10')}
         >
-          DIGITAL{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-b from-dark-500 to-gray">
-            SOLUTIONS
-          </span>{' '}
-          <br /> FOR{' '}
+          DIGITAL <span className="stroke">SOLUTIONS</span> <br /> FOR{' '}
           <span
             className={clsx(
               saol.className,
@@ -51,11 +47,12 @@ export default function Hero() {
         <div className="mt-20 px-6 py-3 ring-1 ring-gray rounded-2xl text-base font-semibold">
           <TextLoop />
         </div>
+        <div className="absolute -top-1/2 right-2/3 w-[800px] h-[800px] bg-[#9131F1] rounded-full blur-3xl opacity-[0.03] -z-20" />
+        <div className="absolute -bottom-1/2 left-2/3 w-[800px] h-[800px] bg-[#3150F1] rounded-full blur-3xl opacity-[0.03] -z-20" />
       </div>
       <div className="absolute top-0 left-0 h-full overflow-hidden -z-10">
         <Image src={lines} alt="" className="opacity-20" />
       </div>
-      <div className="absolute top-32 left-0 w-[500px] h-[500px] bg-blue rounded-full blur-3xl opacity-10 -z-20" />
     </div>
   )
 }
