@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import clsx from 'clsx'
 
 // Components
-import { Navbar } from '@/components'
+import { Navbar, LenisComponent } from '@/components'
 
 // Fonts
 import localFont from 'next/font/local'
@@ -27,6 +27,7 @@ export default function RootLayout({
           'text-white bg-dark-700 overflow-x-clip',
         )}
       >
+        <LenisComponent />
         <div className="noise fixed pointer-events-none z-50 overflow-hidden w-full h-full m-0" />
         <header className="absolute max-w-7xl m-auto p-8 z-50">
           <Navbar />

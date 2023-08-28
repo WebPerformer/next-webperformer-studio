@@ -36,7 +36,7 @@ export default function Branding() {
         }}
         className="relative text-dark-500 bg-white rounded-2xl p-10 overflow-clip z-10"
       >
-        <div className="mb-80">
+        <div className="mb-24">
           <Image src={star} alt="" className="w-6" />
           <h1
             className={clsx(walsheim.className, 'text-xxl font-semibold my-10')}
@@ -48,9 +48,8 @@ export default function Branding() {
             Our passion for pushing the boundaries knows no limits.
           </p>
         </div>
-        <div className="relative w-full h-[200vh]">
-          <Card />
-        </div>
+        <Card />
+        <div>Teste Teste</div>
         <div className="absolute -top-[280px] -right-[80px]">
           <Image src={lines} alt="" className="scale-105" />
         </div>

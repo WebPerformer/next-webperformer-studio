@@ -32,7 +32,7 @@ export default function Hero() {
           <span
             className={clsx(
               saol.className,
-              'font-light text-transparent bg-clip-text bg-gradient-to-r from-pink to-blue',
+              'h-fit font-light text-transparent bg-clip-text bg-gradient-to-r from-pink to-blue',
             )}
           >
             your

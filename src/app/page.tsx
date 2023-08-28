@@ -6,6 +6,7 @@ export default function Home() {
     <div>
       <Hero />
       <Branding />
+      <div className="h-[300vh]"></div>
     </div>
   )
 }
