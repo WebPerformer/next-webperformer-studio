@@ -74,7 +74,7 @@ export default function Navbar() {
         >
           Request Service
         </TextLink>
-        <div className="glow absolute top-0 left-0 w-full h-full -z-[1] blur-md group-hover:blur-xl transition-all duration-150 ease-linear" />
+        <div className="glow absolute top-0 left-0 w-full h-full -z-[1] blur-md rounded-xl group-hover:blur-md transition-all duration-150 ease-linear" />
       </div>
     </motion.div>
   )

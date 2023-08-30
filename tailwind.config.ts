@@ -8,12 +8,14 @@ const config: Config = {
   ],
   theme: {
     colors: {
-      white: '#FFFFFF',
-      gray: '#5A5A5A',
-      'dark-500': '#1D1D1D',
+      white: '#FFFAFF',
+      gray: '#7B7B7B',
+      'dark-400': '#393939',
+      'dark-500': '#151617',
+      'dark-600': '#0F0F0F',
       'dark-700': '#080808',
-      pink: '#D59FFF',
-      blue: '#75D7F5',
+      pink: '#EE46D3',
+      blue: '#907CFF',
       transparent: 'rgba(0, 0, 0, 0)',
     },
     screens: {
@@ -32,7 +34,7 @@ const config: Config = {
       lg: 'clamp(1.25rem, 1.8vw, 1.6rem)',
       xl: 'clamp(2rem, 3vw, 2.6rem)',
       xxl: 'clamp(3rem, 5vw, 4.6rem)',
-      title: 'clamp(3rem, 6vw, 9rem)',
+      title: 'clamp(3rem, 7vw, 10rem)',
     },
   },
   plugins: [],

@@ -32,7 +32,7 @@ export default function Hero() {
           <span
             className={clsx(
               saol.className,
-              'h-fit font-light text-transparent bg-clip-text bg-gradient-to-r from-pink to-blue',
+              'h-fit font-light text-transparent bg-clip-text bg-gradient-to-tr from-pink to-blue',
             )}
           >
             your
@@ -44,13 +44,13 @@ export default function Hero() {
           Experience the most modern and innovative approach to elevate your
           business in the digital age.
         </p>
-        <div className="mt-20 px-6 py-3 ring-1 ring-gray rounded-2xl text-base font-semibold">
+        <div className="mt-20 px-8 py-4 bg-dark-600 rounded-2xl text-base font-semibold">
           <TextLoop />
         </div>
-        <div className="absolute -top-2/3 -right-1/3 w-full h-[600px] bg-gradient-to-br from-[#9131F1] to-[#3150F1] rounded-[50%] blur-[100px] opacity-10 -z-20 -rotate-12" />
+        <div className="absolute -top-2/3 -right-1/3 w-full h-[600px] bg-gradient-to-br from-blue to-pink rounded-[50%] blur-[100px] opacity-20 -z-20 -rotate-12" />
       </div>
       <div className="absolute top-0 left-0 h-full overflow-hidden -z-10">
-        <Image src={lines} alt="" className="opacity-20" />
+        <Image src={lines} alt="" className="opacity-30" />
       </div>
     </div>
   )

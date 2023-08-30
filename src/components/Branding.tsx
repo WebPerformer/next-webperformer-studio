@@ -10,6 +10,7 @@ import { Card } from '.'
 // Images
 import star from '../../public/images/star.svg'
 import lines from '../../public/images/lines-2.svg'
+import shape from '../../public/images/shape.svg'
 
 // Fonts
 import localFont from 'next/font/local'
@@ -31,13 +32,13 @@ export default function Branding() {
   const widthProgress = useTransform(scrollYProgress, [0, 1], ['80%', '100%'])
 
   return (
-    <div className="w-full flex justify-center overflow-clip">
+    <div className="relative w-full flex justify-center overflow-clip">
       <motion.div
         ref={ref}
         style={{
           width: widthProgress,
         }}
-        className="relative text-dark-500 bg-white rounded-2xl p-20 overflow-clip z-10"
+        className="relative text-white bg-dark-600 rounded-2xl p-20 overflow-clip z-10"
       >
         <div className="">
           <Image src={star} alt="" className="w-6" />
@@ -49,7 +50,7 @@ export default function Branding() {
             <span
               className={clsx(
                 saol.className,
-                'h-fit font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink to-blue',
+                'h-fit font-bold text-transparent bg-clip-text bg-gradient-to-tr from-pink to-blue',
               )}
             >
               Unimaginable
@@ -61,7 +62,14 @@ export default function Branding() {
             Our passion for pushing the boundaries knows no limits.
           </p>
         </div>
-        <Card />
+        <div className="relative">
+          <Card />
+          <Image
+            src={shape}
+            alt=""
+            className="absolute top-[60%] left-1/2 -translate-y-1/2 -translate-x-1/2 -z-40 blur-lg"
+          />
+        </div>
         <div className="">
           <h1
             className={clsx(walsheim.className, 'text-xxl font-semibold mb-10')}
@@ -75,16 +83,16 @@ export default function Branding() {
                   Specialization
                 </div>
                 <ul className="grid grid-rows-4 grid-flow-col gap-y-3 gap-x-10">
-                  <li className="text-lg text-dark-500 font-bold">
+                  <li className="text-lg text-dark-400 font-bold">
                     Brand Definition
                   </li>
-                  <li className="text-lg text-dark-500 font-bold">
+                  <li className="text-lg text-dark-400 font-bold">
                     Brand Purpose and Values
                   </li>
-                  <li className="text-lg text-dark-500 font-bold">
+                  <li className="text-lg text-dark-400 font-bold">
                     Visual Identity
                   </li>
-                  <li className="text-lg text-dark-500 font-bold">
+                  <li className="text-lg text-dark-400 font-bold">
                     Customer Experience
                   </li>
                 </ul>
@@ -94,35 +102,37 @@ export default function Branding() {
                   Industries
                 </div>
                 <ul className="grid grid-rows-4 grid-flow-col gap-y-3 gap-x-10">
-                  <li className="text-lg text-dark-500 font-bold">
+                  <li className="text-lg text-dark-400 font-bold">
                     Real estate
                   </li>
-                  <li className="text-lg text-dark-500 font-bold">Fintech</li>
-                  <li className="text-lg text-dark-500 font-bold">Edtech</li>
-                  <li className="text-lg text-dark-500 font-bold">Lodging</li>
-                  <li className="text-lg text-dark-500 font-bold">Proptech</li>
-                  <li className="text-lg text-dark-500 font-bold">
+                  <li className="text-lg text-dark-400 font-bold">Fintech</li>
+                  <li className="text-lg text-dark-400 font-bold">Edtech</li>
+                  <li className="text-lg text-dark-400 font-bold">Lodging</li>
+                  <li className="text-lg text-dark-400 font-bold">Proptech</li>
+                  <li className="text-lg text-dark-400 font-bold">
                     Hospitality
                   </li>
-                  <li className="text-lg text-dark-500 font-bold">SaaS</li>
+                  <li className="text-lg text-dark-400 font-bold">SaaS</li>
                 </ul>
               </div>
             </div>
             <div className="relative w-1/2 p-10 text-white bg-dark-500 rounded-3xl overflow-hidden">
-              <div className="text-base text-gray font-bold">Experience</div>
-              <div className="text-xl my-10">
-                Our team boasts a wealth of experience, assuring you that we
-                will deliver impressive results and ensure our communication is
-                impeccable.
-              </div>
-              <div className="flex items-center justify-between">
-                <div>
-                  <h1 className="text-base font-bold">Gabriel Araujo</h1>
-                  <p className="text-sm text-gray">Founder & CEO</p>
+              <div className="relative z-10">
+                <div className="text-base text-gray font-bold">Experience</div>
+                <div className="text-xl my-10">
+                  Our team boasts a wealth of experience, assuring you that we
+                  will deliver impressive results and ensure our communication
+                  is impeccable.
                 </div>
-                <button>Request Service</button>
+                <div className="flex items-center justify-between">
+                  <div>
+                    <h1 className="text-base font-bold">Gabriel Araujo</h1>
+                    <p className="text-sm text-gray">Founder & CEO</p>
+                  </div>
+                  <button>Request Service</button>
+                </div>
               </div>
-              <div className="absolute -top-2/3 -right-1/3 w-full h-[600px] bg-gradient-to-br from-[#9131F1] to-[#3150F1] rounded-[50%] blur-[100px] opacity-20 -rotate-12" />
+              <div className="absolute -top-2/3 -right-1/3 w-full h-[600px] bg-gradient-to-br from-pink to-blue rounded-[50%] blur-[100px] opacity-30 -rotate-12" />
             </div>
           </div>
         </div>
