@@ -14,7 +14,10 @@ import lines from '../../public/images/lines-2.svg'
 // Fonts
 import localFont from 'next/font/local'
 const walsheim = localFont({
-  src: '../../public/fonts/GT-Walsheim-Condensed-Medium.woff2',
+  src: '../../public/fonts/GT-Walsheim-Condensed-Black.woff2',
+})
+const saol = localFont({
+  src: '../../public/fonts/SaolDisplay-LightItalic.woff2',
 })
 
 export default function Branding() {
@@ -41,7 +44,17 @@ export default function Branding() {
           <h1
             className={clsx(walsheim.className, 'text-xxl font-semibold my-10')}
           >
-            Unleash Your Imagination <br /> with Unimaginable Projects
+            Unleash Your Imagination
+            <br /> with{' '}
+            <span
+              className={clsx(
+                saol.className,
+                'h-fit font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink to-blue',
+              )}
+            >
+              Unimaginable
+            </span>{' '}
+            Projects
           </h1>
           <p className="w-1/2 text-base text-gray translate-x-1/2">
             Step into a realm of boundless creativity and groundbreaking ideas.
@@ -61,7 +74,7 @@ export default function Branding() {
                 <div className="text-base text-gray font-bold mb-10">
                   Specialization
                 </div>
-                <ul className="grid gap-3">
+                <ul className="grid grid-rows-4 grid-flow-col gap-y-3 gap-x-10">
                   <li className="text-lg text-dark-500 font-bold">
                     Brand Definition
                   </li>
@@ -80,7 +93,7 @@ export default function Branding() {
                 <div className="text-base text-gray font-bold mb-10">
                   Industries
                 </div>
-                <ul className="grid grid-rows-4 grid-flow-col gap-y-3 gap-x-20">
+                <ul className="grid grid-rows-4 grid-flow-col gap-y-3 gap-x-10">
                   <li className="text-lg text-dark-500 font-bold">
                     Real estate
                   </li>
@@ -95,20 +108,21 @@ export default function Branding() {
                 </ul>
               </div>
             </div>
-            <div className="w-1/2 p-10 text-white bg-dark-500 rounded-3xl">
+            <div className="relative w-1/2 p-10 text-white bg-dark-500 rounded-3xl overflow-hidden">
               <div className="text-base text-gray font-bold">Experience</div>
               <div className="text-xl my-10">
-                Our crew got tons of experience, so you know we'll come through
-                with cool stuff and make sure our communication game is on
-                point.
+                Our team boasts a wealth of experience, assuring you that we
+                will deliver impressive results and ensure our communication is
+                impeccable.
               </div>
               <div className="flex items-center justify-between">
                 <div>
                   <h1 className="text-base font-bold">Gabriel Araujo</h1>
                   <p className="text-sm text-gray">Founder & CEO</p>
                 </div>
-                <button>Bot</button>
+                <button>Request Service</button>
               </div>
+              <div className="absolute -top-2/3 -right-1/3 w-full h-[600px] bg-gradient-to-br from-[#9131F1] to-[#3150F1] rounded-[50%] blur-[100px] opacity-20 -rotate-12" />
             </div>
           </div>
         </div>
