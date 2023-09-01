@@ -39,10 +39,10 @@ export default function Hero() {
           </span>{' '}
           COMPANY
         </h1>
-        <p className="text-center text-base text-gray">
-          Empower Your Business with Cutting-Edge Digital Services. <br />{' '}
-          Experience the most modern and innovative approach to elevate your
-          business in the digital age.
+        <p className="w-2/3 text-center text-base text-gray">
+          Empower Your Business with Cutting-Edge Digital Services. Experience
+          the most modern and innovative approach to elevate your business in
+          the digital age.
         </p>
         <div className="mt-20 px-8 py-4 bg-dark-600 rounded-2xl text-base font-semibold">
           <TextLoop />

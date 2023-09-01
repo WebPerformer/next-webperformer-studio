@@ -32,7 +32,7 @@ export default function RootLayout({
         <header className="absolute max-w-7xl m-auto p-8 z-50">
           <Navbar />
         </header>
-        <main className="max-w-[2000px] m-auto px-8">{children}</main>
+        <main className="max-w-content m-auto px-8">{children}</main>
       </body>
     </html>
   )

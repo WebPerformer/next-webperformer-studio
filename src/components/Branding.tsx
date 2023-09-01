@@ -77,7 +77,7 @@ export default function Branding() {
             Expertise
           </h1>
           <div className="w-full h-full flex justify-between">
-            <div className="w-1/2 flex gap-32 py-10">
+            <div className="w-1/2 flex gap-[4vw] py-10">
               <div>
                 <div className="text-base text-gray font-bold mb-10">
                   Specialization
