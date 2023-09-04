@@ -1,16 +1,12 @@
 'use client'
 import Image from 'next/image'
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import clsx from 'clsx'
 import { motion, useScroll, useTransform } from 'framer-motion'
-
-// Components
-import { Card } from '.'
 
 // Images
 import star from '../../public/images/star.svg'
 import lines from '../../public/images/lines-2.svg'
-import shape from '../../public/images/shape.svg'
 
 // Fonts
 import localFont from 'next/font/local'
@@ -23,6 +19,7 @@ const saol = localFont({
 
 export default function Branding() {
   const ref = useRef(null)
+  const cardRef = useRef(null)
 
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -30,6 +27,26 @@ export default function Branding() {
   })
 
   const widthProgress = useTransform(scrollYProgress, [0, 1], ['80%', '100%'])
+
+  useEffect(() => {
+    const spectrumContainer = cardRef.current as HTMLElement | null // Explicitly cast to HTMLElement | null
+    if (spectrumContainer) {
+      spectrumContainer.onmousemove = (e) => {
+        const spectrumElements = document.getElementsByClassName('spectrum')
+        for (let i = 0; i < spectrumElements.length; i++) {
+          const spectrum = spectrumElements[i] as HTMLElement // Explicitly cast to HTMLElement
+          const rect = spectrum.getBoundingClientRect()
+          const x = e.clientX - rect.left
+          const y = e.clientY - rect.top
+
+          spectrum.style.setProperty('--mouse-x', `${x}px`)
+          spectrum.style.setProperty('--mouse-y', `${y}px`)
+        }
+      }
+    } else {
+      console.error("Element with ID 'cards' not found.")
+    }
+  }, [])
 
   return (
     <div className="relative w-full flex justify-center overflow-clip">
@@ -62,13 +79,34 @@ export default function Branding() {
             Our passion for pushing the boundaries knows no limits.
           </p>
         </div>
-        <div className="relative">
-          <Card />
-          <Image
-            src={shape}
-            alt=""
-            className="absolute top-[60%] left-1/2 -translate-y-1/2 -translate-x-1/2 -z-40 blur-lg"
-          />
+        <div className="relative my-32">
+          <div className="grid grid-cols-5 gap-10" ref={cardRef}>
+            <div className="spectrum p-10 bg-dark-500 rounded-3xl">
+              <div className="flex items-center justify-center whitespace-nowrap">
+                <h1 className="text-lg font-medium">Branding</h1>
+              </div>
+            </div>
+            <div className="spectrum p-10 bg-dark-500 rounded-3xl">
+              <div className="flex items-center justify-center whitespace-nowrap">
+                <h1 className="text-lg font-medium">UI/UX Design</h1>
+              </div>
+            </div>
+            <div className="spectrum p-10 bg-dark-500 rounded-3xl">
+              <div className="flex items-center justify-center whitespace-nowrap">
+                <h1 className="text-lg font-medium">Development</h1>
+              </div>
+            </div>
+            <div className="spectrum p-10 bg-dark-500 rounded-3xl">
+              <div className="flex items-center justify-center whitespace-nowrap">
+                <h1 className="text-lg font-medium">Mobile</h1>
+              </div>
+            </div>
+            <div className="spectrum p-10 bg-dark-500 rounded-3xl">
+              <div className="flex items-center justify-center whitespace-nowrap">
+                <h1 className="text-lg font-medium">SEO</h1>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="">
           <h1
@@ -79,7 +117,7 @@ export default function Branding() {
           <div className="w-full h-full flex justify-between">
             <div className="w-1/2 flex gap-[4vw] py-10">
               <div>
-                <div className="text-base text-gray font-bold mb-10">
+                <div className="text-base text-gray font-semibold mb-10">
                   Specialization
                 </div>
                 <ul className="grid grid-rows-4 grid-flow-col gap-y-3 gap-x-10">
@@ -98,7 +136,7 @@ export default function Branding() {
                 </ul>
               </div>
               <div>
-                <div className="text-base text-gray font-bold mb-10">
+                <div className="text-base text-gray font-semibold mb-10">
                   Industries
                 </div>
                 <ul className="grid grid-rows-4 grid-flow-col gap-y-3 gap-x-10">
@@ -118,7 +156,9 @@ export default function Branding() {
             </div>
             <div className="relative w-1/2 p-10 text-white bg-dark-500 rounded-3xl overflow-hidden">
               <div className="relative z-10">
-                <div className="text-base text-gray font-bold">Experience</div>
+                <div className="text-base text-gray font-semibold">
+                  Experience
+                </div>
                 <div className="text-xl my-10">
                   Our team boasts a wealth of experience, assuring you that we
                   will deliver impressive results and ensure our communication

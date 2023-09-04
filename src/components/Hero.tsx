@@ -26,7 +26,10 @@ export default function Hero() {
           <Image src={brand} alt="" />
         </div>
         <h1
-          className={clsx(walsheim.className, 'text-title leading-none my-10')}
+          className={clsx(
+            walsheim.className,
+            'text-center text-title leading-none my-10',
+          )}
         >
           DIGITAL <span className="stroke">SOLUTIONS</span> <br /> FOR{' '}
           <span
@@ -50,7 +53,7 @@ export default function Hero() {
         <div className="absolute -top-2/3 -right-1/3 w-full h-[600px] bg-gradient-to-br from-blue to-pink rounded-[50%] blur-[100px] opacity-20 -z-20 -rotate-12" />
       </div>
       <div className="absolute top-0 left-0 h-full overflow-hidden -z-10">
-        <Image src={lines} alt="" className="opacity-30" />
+        <Image src={lines} alt="" className="opacity-10" />
       </div>
     </div>
   )
