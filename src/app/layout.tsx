@@ -29,10 +29,10 @@ export default function RootLayout({
       >
         <LenisComponent />
         <div className="noise fixed pointer-events-none z-50 overflow-hidden w-full h-full m-0" />
-        <header className="absolute max-w-7xl m-auto p-8 z-50">
+        <header className="absolute max-w-7xl m-auto px-20 py-8 z-50">
           <Navbar />
         </header>
-        <main className="max-w-content m-auto px-8">{children}</main>
+        <main className="max-w-content m-auto">{children}</main>
       </body>
     </html>
   )

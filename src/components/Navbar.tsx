@@ -4,7 +4,7 @@ import clsx from 'clsx'
 import { motion, useScroll } from 'framer-motion'
 
 // Components
-import { TextLink } from '@/components'
+import { TextLink, ButtonRequest } from '@/components'
 
 // Fonts
 import localFont from 'next/font/local'
@@ -65,17 +65,7 @@ export default function Navbar() {
           </TextLink>
         </li>
       </ul>
-      <div className="relative group font-bold z-10">
-        <TextLink
-          link="/service"
-          primary="text-dark-500"
-          secondary="text-dark-700"
-          button="w-full px-6 py-2 bg-white rounded-xl whitespace-nowrap group-hover:scale-105 transition-all duration-500 ease-linear"
-        >
-          Request Service
-        </TextLink>
-        <div className="glow absolute top-0 left-0 w-full h-full -z-[1] blur-md rounded-xl group-hover:blur-md transition-all duration-150 ease-linear" />
-      </div>
+      <ButtonRequest />
     </motion.div>
   )
 }

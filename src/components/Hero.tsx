@@ -1,59 +1,89 @@
+'use client'
 import React from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
+import { motion } from 'framer-motion'
 
 // Components
-import { TextLoop } from '.'
+import { TextLoop, ButtonRequest } from '.'
 
 // Images
 import brand from '../../public/images/brand.svg'
 import lines from '../../public/images/lines.svg'
+import image1 from '../../public/images/image-1.jpg'
+import image2 from '../../public/images/image-2.png'
+import shape from '../../public/images/shape.svg'
+
+// Icons
+import { IoIosArrowDown } from 'react-icons/io'
 
 // Fonts
 import localFont from 'next/font/local'
-const walsheim = localFont({
-  src: '../../public/fonts/GT-Walsheim-Condensed-Black.woff2',
-})
-const saol = localFont({
-  src: '../../public/fonts/SaolDisplay-LightItalic.woff2',
+const clash = localFont({
+  src: '../../public/fonts/ClashDisplay-Medium.ttf',
 })
 
 export default function Hero() {
   return (
-    <div className="relative pt-40 pb-20">
-      <div className="relative flex flex-col items-center justify-center">
-        <div>
-          <Image src={brand} alt="" />
-        </div>
-        <h1
-          className={clsx(
-            walsheim.className,
-            'text-center text-title leading-none my-10',
-          )}
-        >
-          DIGITAL <span className="stroke">SOLUTIONS</span> <br /> FOR{' '}
-          <span
+    <div className="relative pt-48 pb-28 px-20">
+      <div className="flex gap-20 lg:flex-col">
+        <div className="w-1/2 lg:w-full lg:text-center">
+          <h1
             className={clsx(
-              saol.className,
-              'h-fit font-light text-transparent bg-clip-text bg-gradient-to-tr from-pink to-blue',
+              clash.className,
+              'text-xxl text-white font-medium mb-5 lg:text-title',
             )}
           >
-            your
-          </span>{' '}
-          COMPANY
-        </h1>
-        <p className="w-2/3 text-center text-base text-gray">
-          Empower Your Business with Cutting-Edge Digital Services. Experience
-          the most modern and innovative approach to elevate your business in
-          the digital age.
-        </p>
-        <div className="mt-20 px-8 py-4 bg-dark-600 rounded-2xl text-base font-semibold">
-          <TextLoop />
+            A new branding studio created by Expiriente Freelancers
+          </h1>
+          <p className="text-base text-gray font-normal mb-20">
+            This indicates the establishment of a business entity dedicated to
+            providing branding services.
+          </p>
+          <div className="flex gap-5 lg:justify-center">
+            <ButtonRequest textSize="text-base" />
+            <div className="px-6 py-2 text-base text-white font-normal bg-dark-500 rounded-xl">
+              <TextLoop />
+            </div>
+          </div>
         </div>
-        <div className="absolute -top-2/3 -right-1/3 w-full h-[600px] bg-gradient-to-br from-blue to-pink rounded-[50%] blur-[100px] opacity-20 -z-20 -rotate-12" />
-      </div>
-      <div className="absolute top-0 left-0 h-full overflow-hidden -z-10">
-        <Image src={lines} alt="" className="opacity-10" />
+        <div className="relative w1/2 mt-3 lg:w-full">
+          <div className="relative">
+            <Image src={image1} alt="" className="lg:w-full rounded-2xl" />
+            <Image
+              src={image2}
+              alt=""
+              className="absolute -bottom-10 -left-10"
+            />
+            <Image
+              src={shape}
+              alt=""
+              className="absolute -top-10 -right-10 -z-10"
+            />
+          </div>
+          <div className="absolute bottom-0 right-0 flex items-center gap-5 text-base lg:hidden">
+            Scroll to explore{' '}
+            <motion.div
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{
+                repeat: Infinity,
+                duration: 2,
+              }}
+              className="px-3 py-2 text-base text-dark-500 bg-white
+            rounded-xl"
+            >
+              <motion.div
+                animate={{ y: [-10, 10], opacity: [0, 1, 0] }}
+                transition={{
+                  repeat: Infinity,
+                  duration: 1.5,
+                }}
+              >
+                <IoIosArrowDown />
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
       </div>
     </div>
   )

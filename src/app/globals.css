@@ -148,7 +148,6 @@ html.lenis {
   flex-direction: column;
   flex-grow: 1;
   inset: 1px;
-  padding: 10px;
   position: absolute;
   z-index: 2;
 }

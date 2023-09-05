@@ -20,7 +20,7 @@ const config: Config = {
     },
     screens: {
       xl: { raw: '(max-width: 1440px)' },
-      lg: { raw: '(max-width: 1024px)' },
+      lg: { raw: '(max-width: 1210px)' },
       md: { raw: '(max-width: 768px)' },
       sl: { raw: '(max-width: 425px)' },
       sm: { raw: '(max-width: 375px)' },
@@ -28,12 +28,12 @@ const config: Config = {
       'h-md': { raw: '(max-height: 700px)' },
     },
     fontSize: {
-      xs: 'clamp(0.5rem, 0.6vw, 30rem)',
+      xs: 'clamp(0.6rem, 0.6vw, 0.6rem)',
       sm: 'clamp(0.8rem, 0.8vw, 1rem)',
-      base: 'clamp(1rem, 1vw, 1.4rem)',
+      base: 'clamp(1rem, 1vw, 1.2rem)',
       lg: 'clamp(1.2rem, 1.2vw, 1.8rem)',
       xl: 'clamp(1.4rem, 1.4vw, 2.2rem)',
-      xxl: 'clamp(2.6rem, 2.6vw, 30rem)',
+      xxl: 'clamp(1.6rem, 2.7vw, 4.4rem)',
       title: 'clamp(0rem, 7vw, 125rem)',
     },
     maxWidth: {
