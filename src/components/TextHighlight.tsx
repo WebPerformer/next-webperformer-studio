@@ -36,7 +36,7 @@ export default function TextHighlight() {
         const tl = gsap.timeline({
           scrollTrigger: {
             trigger: triggerElement,
-            start: 'top bottom',
+            start: 'top center',
             end: 'bottom center',
             scrub: 1,
           },
@@ -51,7 +51,7 @@ export default function TextHighlight() {
 
   return (
     <div>
-      <p id="target" className="split-lines text-xxl text-white font-medium">
+      <p id="target" className="split-lines text-xxl text-white font-normal">
         Branding is the strategic process of creating and managing a distinct
         and memorable identity for a product, service, or organization. It
         involves crafting a unique brand image, including elements such as

@@ -26,7 +26,7 @@ export default function BrandingCards() {
 
   return (
     <div className="relative my-32">
-      <div className="grid grid-cols-5 gap-10" ref={cardRef}>
+      <div className="grid grid-cols-5 gap-10 xl:gap-5" ref={cardRef}>
         <div className="spectrum p-5 bg-dark-500 rounded-2xl">
           <div className="flex items-center justify-center whitespace-nowrap">
             <h1 className="text-lg font-medium">Branding</h1>
