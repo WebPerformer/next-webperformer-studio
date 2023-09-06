@@ -25,7 +25,7 @@ const clash = localFont({
 
 export default function Hero() {
   return (
-    <div className="relative pt-48 pb-28 px-20">
+    <div className="relative pt-48 pb-28">
       <div className="flex gap-20 lg:flex-col">
         <div className="w-1/2 lg:w-full lg:text-center">
           <h1
