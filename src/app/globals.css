@@ -101,7 +101,7 @@ html.lenis {
   pointer-events: none;
 }
 
-/* Text Stroke */
+/* Card Spectrum on hover */
 .spectrum {
   position: relative;
 }
@@ -150,4 +150,9 @@ html.lenis {
   inset: 1px;
   position: absolute;
   z-index: 2;
+}
+
+/* Text highlight on Scroll */
+.line {
+  position: relative;
 }

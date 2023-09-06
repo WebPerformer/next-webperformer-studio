@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import React, { useRef, useEffect } from 'react'
 import clsx from 'clsx'
+import SplitType from 'split-type'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 // Images
@@ -15,9 +16,8 @@ const clash = localFont({
 })
 
 export default function Branding() {
+  // Animation on margin size on scroll
   const ref = useRef(null)
-  const cardRef = useRef(null)
-
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['0 1', '0 0.2'],
@@ -25,6 +25,8 @@ export default function Branding() {
 
   const marginProgress = useTransform(scrollYProgress, [0, 1], ['90px', '0px'])
 
+  // Spectrum animation on card
+  const cardRef = useRef(null)
   useEffect(() => {
     const spectrumContainer = cardRef.current as HTMLElement | null // Explicitly cast to HTMLElement | null
     if (spectrumContainer) {
@@ -44,6 +46,56 @@ export default function Branding() {
       console.error("Element with ID 'cards' not found.")
     }
   }, [])
+
+  // Text line animation on scroll
+  const targetRef = useRef(null)
+
+  useEffect(() => {
+    const runSplit = () => {
+      if (targetRef.current) {
+        const text = new SplitType(targetRef.current, { types: 'lines, words' })
+      }
+
+      // Create a new div element
+      const lineMask = document.createElement('div')
+      lineMask.className =
+        'line-mask w-full h-full absolute top-0 right-0 bg-dark-600 opacity-60 z-10'
+
+      // Append the new div element to elements with the 'line' class
+      const elementsWithLineClass = document.getElementsByClassName('line')
+
+      // Loop through the elements and append the div to each of them
+      for (let i = 0; i < elementsWithLineClass.length; i++) {
+        elementsWithLineClass[i].appendChild(lineMask.cloneNode(true))
+      }
+    }
+
+    runSplit()
+
+    window.addEventListener('resize', runSplit)
+
+    return () => {
+      window.removeEventListener('resize', runSplit)
+    }
+  }, [])
+
+  // $('.line').each(function (index) {
+  //   const triggerElement = $(this)
+  //   const targetElement = $(this).find('.line-mask')
+
+  //   const tl = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: triggerElement,
+  //       start: 'top center',
+  //       end: 'bottom center',
+  //       scrub: 1,
+  //     },
+  //   })
+  //   tl.to(targetElement, {
+  //     width: '0%',
+  //     durantion: 1,
+  //   })
+  // })
 
   return (
     <div className="relative w-full flex justify-center overflow-clip">
@@ -71,7 +123,7 @@ export default function Branding() {
             Our passion for pushing the boundaries knows no limits.
           </p>
         </div>
-        <div className="relative my-20">
+        <div className="relative my-32">
           <div className="grid grid-cols-5 gap-10" ref={cardRef}>
             <div className="spectrum p-5 bg-dark-500 rounded-2xl">
               <div className="flex items-center justify-center whitespace-nowrap">
@@ -101,7 +153,11 @@ export default function Branding() {
           </div>
         </div>
         <div>
-          <p className="text-xxl text-white font-medium">
+          <p
+            ref={targetRef}
+            id="target"
+            className="text-xxl text-white font-medium"
+          >
             Branding is the strategic process of creating and managing a
             distinct and memorable identity for a product, service, or
             organization. It involves crafting a unique brand image, including
