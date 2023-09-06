@@ -16,8 +16,8 @@ export default function Branding() {
     target: ref,
     offset: ['0 1', '0 0.4'],
   })
-
   const widthProgress = useTransform(scrollYProgress, [0, 1], ['90%', '100%'])
+
   return (
     <div className="relative w-full flex justify-center overflow-clip">
       <motion.div
