@@ -82,6 +82,7 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      <Image src={lines} alt="" className="absolute top-0 -z-10 opacity-30" />
     </div>
   )
 }
