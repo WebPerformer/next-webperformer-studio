@@ -7,7 +7,7 @@ export default function LenisComponent() {
     const lenis = new Lenis()
 
     lenis.on('scroll', (e: any) => {
-      console.log(e)
+      console.log()
     })
 
     function raf(time: any) {

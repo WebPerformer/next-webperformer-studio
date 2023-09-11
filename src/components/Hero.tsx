@@ -2,7 +2,7 @@
 import React, { useRef } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 // Components
 import { TextLoop, ButtonRequest } from '.'
@@ -23,15 +23,6 @@ const clash = localFont({
 })
 
 export default function Hero() {
-  const ref = useRef(null)
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['start end', 'end start'],
-  })
-
-  const y = useTransform(scrollYProgress, [0, 1], [0, 500])
-
   return (
     <div className="relative pt-48 pb-28">
       <div className="flex gap-20 lg:flex-col">
@@ -58,12 +49,9 @@ export default function Hero() {
         <div className="relative w1/2 mt-3 lg:w-full">
           <div className="relative">
             <Image src={image1} alt="" className="lg:w-full rounded-2xl" />
-            <motion.div
-              style={{ y, bottom: 20 }}
-              className="absolute -bottom-10 -left-10"
-            >
+            <div className="absolute -bottom-10 -left-10">
               <Image src={image2} alt="" />
-            </motion.div>
+            </div>
             <Image
               src={shape}
               alt=""
