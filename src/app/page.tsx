@@ -9,7 +9,6 @@ export default function Home() {
       <Expertise />
       <BigText />
       <FrontMobile />
-      <div className="h-[300vh]"></div>
     </div>
   )
 }

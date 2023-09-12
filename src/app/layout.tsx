@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import clsx from 'clsx'
 
 // Components
-import { Navbar, LenisComponent } from '@/components'
+import { Navbar, Footer, LenisComponent } from '@/components'
 
 // Fonts
 import localFont from 'next/font/local'
@@ -32,7 +32,10 @@ export default function RootLayout({
         <header className="absolute max-w-7xl m-auto px-20 py-8 z-50">
           <Navbar />
         </header>
-        <main className="max-w-content m-auto px-20">{children}</main>
+        <main className="relative max-w-content m-auto px-20">{children}</main>
+        {/* <footer className="max-w-7xl m-auto px-20 py-8 -z-50">
+          <Footer />
+        </footer> */}
       </body>
     </html>
   )

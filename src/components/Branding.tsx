@@ -17,6 +17,11 @@ export default function Branding() {
     offset: ['0 1', '0 0.4'],
   })
   const widthProgress = useTransform(scrollYProgress, [0, 1], ['90%', '100%'])
+  const paddingProgress = useTransform(
+    scrollYProgress,
+    [0, 1],
+    ['40px', '80px'],
+  )
 
   return (
     <div className="relative w-full flex justify-center overflow-clip">
@@ -24,8 +29,9 @@ export default function Branding() {
         ref={ref}
         style={{
           width: widthProgress,
+          padding: paddingProgress,
         }}
-        className="relative text-white bg-dark-600 rounded-2xl p-20 overflow-clip z-10"
+        className="relative text-white bg-dark-600 rounded-2xl overflow-clip z-10"
       >
         <StarTitle
           title="Unleash Your Imagination <br /> With Unimaginable Projects"
