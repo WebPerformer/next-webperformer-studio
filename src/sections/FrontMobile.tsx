@@ -2,7 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 
 // Components
-import { StarTitle } from '.'
+import { StarTitle } from '@/components'
 
 // Images
 import design from '../../public/images/design.jpg'

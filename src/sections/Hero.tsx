@@ -5,7 +5,7 @@ import clsx from 'clsx'
 import { motion } from 'framer-motion'
 
 // Components
-import { TextLoop, ButtonRequest } from '.'
+import { TextLoop, ButtonRequest } from '@/components'
 
 // Images
 import lines from '../../public/images/lines.svg'

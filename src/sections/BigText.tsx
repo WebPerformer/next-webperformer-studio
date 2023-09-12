@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/all'
 import $ from 'jquery'
 
 // Components
-import { StarTitle } from '.'
+import { StarTitle } from '@/components'
 
 // Fonts
 import localFont from 'next/font/local'

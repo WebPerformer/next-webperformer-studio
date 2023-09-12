@@ -4,7 +4,7 @@ import React, { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 // Components
-import { BrandingCards, StarTitle, TextHighlight } from '.'
+import { BrandingCards, StarTitle, TextHighlight } from '@/components'
 
 // Images
 import lines from '../../public/images/lines-2.svg'

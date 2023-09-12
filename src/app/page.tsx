@@ -1,5 +1,5 @@
-// Section
-import { Hero, Branding, Expertise, BigText, FrontMobile } from '@/components'
+// Sections
+import { Hero, Branding, Expertise, BigText, FrontMobile } from '@/sections'
 
 export default function Home() {
   return (
