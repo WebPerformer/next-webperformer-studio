@@ -11,7 +11,7 @@ import code from '../../public/images/code.jpg'
 // icons
 import { BiSolidRightArrow } from 'react-icons/bi'
 
-export default function FrontMobile() {
+export default function Development() {
   return (
     <div className="bg-dark-700">
       <StarTitle

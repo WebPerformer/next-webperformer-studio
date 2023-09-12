@@ -41,9 +41,7 @@ export default function Hero() {
           </p>
           <div className="flex gap-5 lg:justify-center">
             <ButtonRequest textSize="text-base" />
-            <div className="px-6 py-2 text-base text-white font-normal bg-dark-500 rounded-xl">
-              <TextLoop />
-            </div>
+            <TextLoop />
           </div>
         </div>
         <div className="relative w1/2 mt-3 lg:w-full">

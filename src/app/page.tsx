@@ -1,5 +1,5 @@
 // Sections
-import { Hero, Branding, Expertise, BigText, FrontMobile } from '@/sections'
+import { Hero, Branding, Expertise, BigText, Development } from '@/components'
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
       <Branding />
       <Expertise />
       <BigText />
-      <FrontMobile />
+      <Development />
     </div>
   )
 }
