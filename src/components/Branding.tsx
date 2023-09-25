@@ -16,7 +16,6 @@ export default function Branding() {
     target: ref,
     offset: ['0 1', '0 0.4'],
   })
-  const widthProgress = useTransform(scrollYProgress, [0, 1], ['90%', '100%'])
   const paddingProgress = useTransform(
     scrollYProgress,
     [0, 1],
@@ -28,9 +27,10 @@ export default function Branding() {
       <motion.div
         ref={ref}
         style={{
-          padding: paddingProgress,
+          paddingLeft: paddingProgress,
+          paddingRight: paddingProgress,
         }}
-        className="relative w-full text-white bg-dark-600 rounded-2xl overflow-clip z-10"
+        className="relative w-full text-white bg-dark-600 rounded-2xl overflow-clip z-10 py-20"
       >
         <StarTitle
           title="Unleash Your Imagination <br /> With Unimaginable Projects"

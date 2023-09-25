@@ -1,28 +1,34 @@
-import React from 'react'
-import Image from 'next/image'
+'use client'
+import React, { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 
 // Components
-import { StarTitle } from '@/components'
-
-// Images
-import design from '../../public/images/design.jpg'
-import code from '../../public/images/code.jpg'
+import { Skeleton, StarTitle } from '@/components'
 
 export default function Development() {
+  // Scale animation on scroll
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['0 1', '0 0.4'],
+  })
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], ['0.8', '1'])
+
   return (
     <div className="bg-dark-700">
       <StarTitle
         title="Frontend Development: <br /> Design Ready to Get Coded"
         subtitle="In todays rapidly evolving digital landscape, having a strong online presence is crucial for businesses to thrive. Our frontend and mobile application offers a gateway to enhancing user engagement and expanding your reach."
       />
-      <div className="relative flex justify-center gap-16 my-32 text-xxl h-[200vh]">
-        <Image
-          src={design}
-          alt=""
-          className="sticky top-20 w-1/2 h-fit rounded-2xl z-10"
-        />
-        <div className="absolute w-full h-screen bg-gradient-to-r from-pink to-blue rounded-full blur-3xl opacity-10" />
-      </div>
+      <motion.div
+        ref={ref}
+        style={{
+          scale: scaleProgress,
+        }}
+        className="mt-96 text-xxl h-[500vh]"
+      >
+        <Skeleton />
+      </motion.div>
     </div>
   )
 }
