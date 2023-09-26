@@ -33,7 +33,7 @@ const config: Config = {
       base: 'clamp(1rem, 1vw, 1.2rem)',
       lg: 'clamp(1.2rem, 1.2vw, 1.8rem)',
       xl: 'clamp(1.4rem, 1.4vw, 2.2rem)',
-      xxl: 'clamp(1.6rem, 2.7vw, 4.4rem)',
+      xxl: 'clamp(1.6rem, 3.1vw, 4.4rem)',
       title: 'clamp(0rem, 7vw, 125rem)',
     },
     maxWidth: {
