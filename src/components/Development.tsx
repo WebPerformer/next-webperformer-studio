@@ -25,7 +25,7 @@ export default function Development() {
         style={{
           scale: scaleProgress,
         }}
-        className="mt-96 text-xxl h-[500vh]"
+        className="mt-96 text-xxl h-[1000vh]"
       >
         <Skeleton />
       </motion.div>
