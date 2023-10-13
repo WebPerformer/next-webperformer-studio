@@ -74,31 +74,9 @@
     background: linear-gradient(90deg, rgba(117, 215, 245, 0.7) 0%, rgba(213, 159, 255, 0.7) 100%);
 }
 
-/* Text Stroke */
-.stroke {
-    color: rgba(0, 0, 0, 0); /* Will override color (regardless of order) */
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: white;
-}
-
-html.lenis {
-  height: auto;
-}
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
-
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-
-.lenis.lenis-stopped {
-  overflow: hidden;
-}
-
-.lenis.lenis-scrolling iframe {
-  pointer-events: none;
+/* Text highlight on Scroll */
+.line {
+    position: relative;
 }
 
 /* Card Spectrum on hover */
@@ -152,7 +130,23 @@ html.lenis {
   z-index: 2;
 }
 
-/* Text highlight on Scroll */
-.line {
-  position: relative;
+// Lenis smooth scroll
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }

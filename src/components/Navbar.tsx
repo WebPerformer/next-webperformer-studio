@@ -1,54 +1,67 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import clsx from 'clsx'
-import { motion, useScroll } from 'framer-motion'
+import {
+  motion,
+  useScroll,
+  useMotionValueEvent,
+  AnimatePresence,
+} from 'framer-motion'
+import $ from 'jquery'
 
 // Components
-import { TextLink, ButtonRequest } from '@/components'
+import { TextLink, ButtonRequest, NavLink } from '.'
+
+// Icons
+import { HiMenuAlt4 } from 'react-icons/hi'
+import { LiaTimesSolid } from 'react-icons/lia'
 
 // Fonts
 import localFont from 'next/font/local'
 const panchang = localFont({ src: '../../public/fonts/Panchang-Variable.ttf' })
 
 export default function Navbar() {
-  const [top, setTop] = useState(30)
+  // Toggle menu
+  const [open, setOpen] = useState(false)
+  const toggleMenu = () => {
+    setOpen((prevOpen) => !prevOpen)
+  }
 
-  const { scrollYProgress } = useScroll()
+  // Prevent scroll on open true
+  open ? $('body').css('overflow', 'hidden') : $('body').css('overflow', 'auto')
 
-  useEffect(() => {
-    let previousScrollY = scrollYProgress.get()
+  // Navbar hide on scroll
+  const { scrollY } = useScroll()
 
-    const handleScroll = () => {
-      const currentScrollY = scrollYProgress.get()
-      if (currentScrollY < previousScrollY) {
-        setTop(30)
-      } else {
-        setTop(-90)
-      }
-      previousScrollY = currentScrollY
+  const [hidden, setHidden] = useState(false)
+
+  useMotionValueEvent(scrollY, 'change', (latest) => {
+    const previous = scrollY.getPrevious()
+    if (latest > previous && latest > 50) {
+      setHidden(true)
+    } else {
+      setHidden(false)
     }
-
-    window.addEventListener('scroll', handleScroll)
-  }, [])
+  })
 
   return (
-    <motion.div
-      style={{
-        top: `${top}px`,
-      }}
-      className="fixed left-1/2 -translate-x-1/2 w-fit bg-dark-500 flex items-center justify-between gap-10 p-2 rounded-2xl transition-all duration-700 ease-in-out"
+    <motion.nav
+      variants={{ visible: { y: 0 }, hidden: { y: '-100px' } }}
+      animate={hidden ? 'hidden' : 'visible'}
+      transition={{ duration: 0.35, ease: 'easeInOut' }}
+      className="fixed flex items-center justify-between gap-10 p-5 w-full sm:w-fit sm:left-1/2 sm:!-translate-x-1/2 sm:bg-dark-500 sm:p-2 sm:rounded-2xl"
     >
       <div
         className={clsx(
           panchang.className,
-          'w-20 flex justify-center font-bold hover:scale-110 transition-all duration-150 ease-linear',
+          'hidden justify-center text-base font-bold hover:scale-110 transition-all duration-150 ease-linear sm:w-20 sm:flex',
         )}
       >
         <TextLink link="/" primary="text-white">
           WP.
         </TextLink>
       </div>
-      <ul className="inline-flex gap-5 font-bold">
+      <ul className="hidden sm:inline-flex sm:gap-5 sm:font-bold">
         <li>
           <TextLink link="/projects" primary="text-gray">
             Projects
@@ -65,7 +78,18 @@ export default function Navbar() {
           </TextLink>
         </li>
       </ul>
+      <div
+        onClick={toggleMenu}
+        className={clsx(
+          { 'text-dark-500 bg-light-gray': open },
+          { 'text-white bg-dark-500': !open },
+          'block text-lg p-3 rounded-md z-[60] sm:hidden transition-all ease-linear duration-200',
+        )}
+      >
+        {open ? <LiaTimesSolid /> : <HiMenuAlt4 />}
+      </div>
       <ButtonRequest />
-    </motion.div>
+      <AnimatePresence mode="wait">{open && <NavLink />}</AnimatePresence>
+    </motion.nav>
   )
 }

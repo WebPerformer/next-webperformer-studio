@@ -1,5 +1,6 @@
 'use client'
-import React from 'react'
+import React, { useRef } from 'react'
+import { motion, useScroll, useTransform } from 'framer-motion'
 import clsx from 'clsx'
 
 // Icons
@@ -8,12 +9,25 @@ import { ImArrowUpRight2 } from 'react-icons/im'
 // Fonts
 import localFont from 'next/font/local'
 const clash = localFont({
-  src: '../../public/fonts/ClashDisplay-Medium.ttf',
+  src: '../../../public/fonts/ClashDisplay-Medium.ttf',
 })
 
 export default function Expertise() {
+  // Scale & opacity animation
+  const ref = useRef(null)
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['center start', 'end start'],
+  })
+  const scaleProgress = useTransform(scrollYProgress, [0, 1], ['1', '0.6'])
+  const opacityProgress = useTransform(scrollYProgress, [0, 1], ['1', '0'])
+
   return (
-    <div className="py-28">
+    <motion.div
+      ref={ref}
+      style={{ scale: scaleProgress, opacity: opacityProgress }}
+      className="py-28"
+    >
       <h1
         className={clsx(
           clash.className,
@@ -22,9 +36,9 @@ export default function Expertise() {
       >
         Expertise
       </h1>
-      <div className="flex">
-        <div className="w-1/2 flex py-10">
-          <div className="w-1/2">
+      <div className="flex flex-col-reverse lg:flex-row">
+        <div className="w-full block py-10 sm:flex lg:w-1/2">
+          <div className="w-full mb-10 sm:w-1/2 sm:mb-0">
             <h1
               className={clsx(
                 clash.className,
@@ -40,7 +54,7 @@ export default function Expertise() {
               <li className="text-lg">Customer Experience</li>
             </ul>
           </div>
-          <div className="w-1/2">
+          <div className="w-full sm:w-1/2">
             <h1
               className={clsx(
                 clash.className,
@@ -60,7 +74,7 @@ export default function Expertise() {
             </ul>
           </div>
         </div>
-        <div className="relative w-1/2 h-fit bg-dark-600 rounded-2xl p-10 overflow-hidden">
+        <div className="relative w-full h-fit bg-dark-600 rounded-2xl p-5 overflow-hidden lg:w-1/2 lg:p-10">
           <h1
             className={clsx(clash.className, 'text-base text-gray font-medium')}
           >
@@ -71,21 +85,20 @@ export default function Expertise() {
             deliver impressive results and ensure our communication is
             impeccable.
           </p>
-          <div className="flex items-center justify-between">
-            <div>
+          <div className="block items-end justify-between lg:flex">
+            <div className="mb-10 lg:mb-0">
               <h1 className="text-base">Gabriel Araujo</h1>
               <p className="text-sm text-gray">Founder & CEO</p>
             </div>
-            <button className="flex items-center gap-4">
+            <button className="w-full px-7 py-5 bg-dark-500 flex items-center justify-center gap-4 rounded-2xl lg:w-fit lg:py-4">
               Request Service{' '}
-              <span className="p-3 text-dark-400 bg-blue rounded-full">
+              <span className="text-dark-400">
                 <ImArrowUpRight2 />
               </span>
             </button>
           </div>
-          <div className="absolute -top-2/3 -right-1/3 w-full h-[600px] bg-gradient-to-br from-pink to-blue rounded-[50%] blur-[100px] opacity-10 -rotate-12" />
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }

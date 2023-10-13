@@ -2,16 +2,12 @@
 import React, { useEffect } from 'react'
 import clsx from 'clsx'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/all'
 import $ from 'jquery'
-
-// Components
-import { StarTitle } from '@/components'
 
 // Fonts
 import localFont from 'next/font/local'
 const panchang = localFont({
-  src: '../../public/fonts/Panchang-Variable.ttf',
+  src: '../../../public/fonts/Panchang-Variable.ttf',
 })
 
 export default function BigText() {
@@ -37,12 +33,13 @@ export default function BigText() {
 
   return (
     <div>
-      <StarTitle
-        title="Passionate Design: <br /> Breathing Life into Imagination"
-        subtitle="We design with passion, infusing every project with creativity and innovation that captivates and inspires. Our dedication to crafting exceptional experiences is evident in every detail, as we strive to exceed expectations and bring visions to life."
-      />
-      <div className="my-32">
-        <ul className={clsx(panchang.className, 'text-[9vw] text-center')}>
+      <div className="my-26">
+        <ul
+          className={clsx(
+            panchang.className,
+            'text-[10.5vw] text-center lg:text-[9vw]',
+          )}
+        >
           <li className="relative overflow-hidden">
             <h1 className="header_text-move">VISUAL</h1>
           </li>

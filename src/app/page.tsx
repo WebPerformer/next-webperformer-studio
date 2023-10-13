@@ -1,14 +1,14 @@
 // Sections
-import { Hero, Branding, Expertise, BigText, Development } from '@/components'
+import { Hero, Branding, Expertise, BigText } from '@/components/sections'
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Hero />
       <Branding />
       <Expertise />
       <BigText />
-      <Development />
-    </div>
+      <div className="h-[200vh]"></div>
+    </>
   )
 }

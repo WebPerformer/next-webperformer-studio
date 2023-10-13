@@ -16,7 +16,7 @@ export default function TextHighlight() {
       const currentElement = $('.split-lines')
       text = new SplitType(currentElement, { types: 'lines, words' })
       $('.line').append(
-        "<div class='line-mask w-full h-full absolute top-0 right-0 bg-dark-600 opacity-60 z-10'></div>",
+        "<div class='line-mask w-full h-full absolute top-0 right-0 bg-dark-700 opacity-60 z-10 sm:bg-dark-600'></div>",
       )
       runAnimation()
     }
