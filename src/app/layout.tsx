@@ -5,6 +5,9 @@ import clsx from 'clsx'
 // Components
 import { Navbar, LenisComponent } from '@/components'
 
+// Context
+import { StateContext } from '@/components/context/StateContext'
+
 // Fonts
 import localFont from 'next/font/local'
 const satoshi = localFont({ src: '../../public/fonts/Satoshi-Variable.ttf' })
@@ -21,22 +24,24 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={clsx(
-          satoshi.className,
-          'text-white bg-dark-700 overflow-x-clip',
-        )}
-      >
-        <LenisComponent />
-        <div className="noise fixed pointer-events-none z-[999] overflow-hidden w-full h-full m-0" />
-        <header className="absolute sm:max-w-7xl sm:p-8 sm:m-auto sm:z-50 sm:px-10 md:px-14 lg:px-20 z-50">
-          <Navbar />
-        </header>
-        <main className="relative max-w-content m-auto px-8 sm:px-10 md:px-14 lg:px-20">
-          {children}
-        </main>
-        <footer></footer>
-      </body>
+      <StateContext>
+        <body
+          className={clsx(
+            satoshi.className,
+            'text-white bg-dark-700 overflow-x-clip',
+          )}
+        >
+          <LenisComponent />
+          <div className="noise fixed pointer-events-none z-[999] overflow-hidden w-full h-full m-0" />
+          <header className="absolute sm:max-w-7xl sm:p-8 sm:m-auto sm:z-50 sm:px-10 md:px-14 lg:px-20 z-50">
+            <Navbar />
+          </header>
+          <main className="relative max-w-content m-auto px-8 sm:px-10 md:px-14 lg:px-20">
+            {children}
+          </main>
+          <footer></footer>
+        </body>
+      </StateContext>
     </html>
   )
 }

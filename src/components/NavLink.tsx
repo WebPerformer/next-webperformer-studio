@@ -5,6 +5,9 @@ import { motion } from 'framer-motion'
 // Components
 import { TextLink, Curve } from '.'
 
+// Context
+import { useStateContext } from './context/StateContext'
+
 // navbar links
 const navItems = [
   {
@@ -83,6 +86,9 @@ export default function NavLink() {
     },
   }
 
+  // useState to close on navigate
+  const { setOpen } = useStateContext()
+
   return (
     <motion.div
       variants={menuVars}
@@ -102,6 +108,7 @@ export default function NavLink() {
               initial="initial"
               animate="animate"
               exit="exit"
+              onClick={() => setOpen(false)}
             >
               <TextLink
                 link={data.href}

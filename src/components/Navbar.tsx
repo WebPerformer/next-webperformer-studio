@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import clsx from 'clsx'
 import {
   motion,
@@ -12,6 +12,9 @@ import $ from 'jquery'
 // Components
 import { TextLink, ButtonRequest, NavLink } from '.'
 
+// Context
+import { useStateContext } from './context/StateContext'
+
 // Icons
 import { HiMenuAlt4 } from 'react-icons/hi'
 import { LiaTimesSolid } from 'react-icons/lia'
@@ -22,13 +25,18 @@ const panchang = localFont({ src: '../../public/fonts/Panchang-Variable.ttf' })
 
 export default function Navbar() {
   // Toggle menu
-  const [open, setOpen] = useState(false)
+  // const [open, setOpen] = useState(false)
+  const { open, setOpen } = useStateContext()
   const toggleMenu = () => {
-    setOpen((prevOpen) => !prevOpen)
+    setOpen((prevOpen: any) => !prevOpen)
   }
 
   // Prevent scroll on open true
-  open ? $('body').css('overflow', 'hidden') : $('body').css('overflow', 'auto')
+  useEffect(() => {
+    open
+      ? $('body').css('overflow', 'hidden')
+      : $('body').css('overflow', 'auto')
+  }, [open])
 
   // Navbar hide on scroll
   const { scrollY } = useScroll()
