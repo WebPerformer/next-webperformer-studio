@@ -1,6 +1,5 @@
 'use client'
-import React, { useRef } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import React from 'react'
 import clsx from 'clsx'
 
 // Icons
@@ -13,21 +12,8 @@ const clash = localFont({
 })
 
 export default function Expertise() {
-  // Scale & opacity animation
-  const ref = useRef(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ['center start', 'end start'],
-  })
-  const scaleProgress = useTransform(scrollYProgress, [0, 1], ['1', '0.6'])
-  const opacityProgress = useTransform(scrollYProgress, [0, 1], ['1', '0'])
-
   return (
-    <motion.div
-      ref={ref}
-      style={{ scale: scaleProgress, opacity: opacityProgress }}
-      className="py-28"
-    >
+    <div className="pt-28 pb-10 lg:py-28">
       <h1
         className={clsx(
           clash.className,
@@ -99,6 +85,6 @@ export default function Expertise() {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   )
 }

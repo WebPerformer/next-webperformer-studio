@@ -47,7 +47,7 @@ export default function Hero() {
           </h1>
           <p className="text-base text-gray font-normal mb-10 lg:mb-20 lg:text-left lg:block">
             Unlocking creativity through the collaboration of seasoned
-            freelancers. Welcome to the future of branding with Expiriente
+            freelancers. Welcome to the future of branding with Web Performer
             Studio.
           </p>
           <div className="flex lg:gap-5">

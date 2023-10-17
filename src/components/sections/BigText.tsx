@@ -33,7 +33,7 @@ export default function BigText() {
 
   return (
     <div>
-      <div className="my-26">
+      <div className="my-0 lg:my-26">
         <ul
           className={clsx(
             panchang.className,
